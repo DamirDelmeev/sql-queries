@@ -38,26 +38,21 @@ public class SqlQueries {
     //Name column containing name of the department "depname".
     //Name column containing employee amount "staff_size".
     //language=HSQLDB
-    String select08 = "SELECT DEPARTMENT.NAME AS depname,COUNT(EMPLOYEE.DEPARTMENT ) AS staff_size FROM EMPLOYEE JOIN " +
-            "DEPARTMENT" +
-            " ON " +
-            "EMPLOYEE" +
-            ".DEPARTMENT = DEPARTMENT.ID GROUP BY DEPARTMENT.NAME";
+    String select08 = "SELECT DEPARTMENT.NAME AS depname,COUNT(EMPLOYEE.DEPARTMENT ) AS staff_size " +
+            "FROM EMPLOYEE JOIN DEPARTMENT ON  EMPLOYEE .DEPARTMENT = DEPARTMENT.ID GROUP BY DEPARTMENT.NAME";
 
     //Select all departments and values of total and average salary per department
     //Name column containing name of the department "depname".
     //language=HSQLDB
-    String select09 = "SELECT DEPARTMENT.NAME AS depname,SUM(SALARY) AS total,AVG(SALARY) AS average FROM EMPLOYEE " +
-            "JOIN " +
-            "DEPARTMENT" +
-            " ON EMPLOYEE.DEPARTMENT =DEPARTMENT.ID GROUP BY DEPARTMENT.NAME";
+    String select09 = "SELECT DEPARTMENT.NAME AS depname,SUM(SALARY) AS total,AVG(SALARY) AS average " +
+            "FROM EMPLOYEE JOIN DEPARTMENT ON EMPLOYEE.DEPARTMENT =DEPARTMENT.ID GROUP BY DEPARTMENT.NAME";
 
     //Select lastnames of all employees and lastnames of their managers if an employee has a manager.
     //Name column containing employee's lastname "employee".
     //Name column containing manager's lastname "manager".
     //language=HSQLDB
-    String select10 = "SELECT E.LASTNAME AS employee,EM.LASTNAME AS manager FROM EMPLOYEE AS E LEFT JOIN EMPLOYEE AS EM ON\n" +
-            "    E.MANAGER=EM.ID";
+    String select10 = "SELECT E.LASTNAME AS employee,EM.LASTNAME AS manager" +
+            " FROM EMPLOYEE AS E LEFT JOIN EMPLOYEE AS EM ON E.MANAGER=EM.ID";
 
 
 }
